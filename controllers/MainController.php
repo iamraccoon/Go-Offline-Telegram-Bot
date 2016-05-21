@@ -11,6 +11,22 @@ use app\actions\InfoAction;
 
 class MainController extends Controller
 {
+    public function behaviors()
+    {
+        return [
+            'user' => [
+                'class' => 'app\components\behaviors\UserBehavior',
+                'actions' => array_keys($this->actions()),
+                'currentAction' => Yii::$app->controller->action->id
+            ],
+            'log' => [
+                'class' => 'app\components\behaviors\LogBehavior',
+                'actions' => array_keys($this->actions()),
+                'currentAction' => Yii::$app->controller->action->id
+            ]
+        ];
+    }
+
     public function actions()
     {
         return [
