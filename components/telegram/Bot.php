@@ -123,15 +123,9 @@ class Bot extends BotApi implements Configurable
      */
     public function getChatId()
     {
-        if ($this->chatId) {
-            return $this->chatId;
-        }
+        $this->chatId = $this->getMessageFromRequest('id');
 
-        if (isset($this->request['message']['from']['id'])) {
-            $this->chatId = $this->request['message']['from']['id'];
-        }
-
-        return $this->chatId;
+        return (int)$this->chatId;
     }
 
     /**
@@ -139,8 +133,17 @@ class Bot extends BotApi implements Configurable
      */
     public function getFirstName()
     {
-        if (isset($this->request['message']['from']['first_name'])) {
-            return $this->request['message']['from']['first_name'];
+        return $this->getMessageFromRequest('first_name');
+    }
+
+    /**
+     * @param $param
+     * @return string
+     */
+    private function getMessageFromRequest($param)
+    {
+        if (isset($this->request['message']['from'][$param])) {
+            return $this->request['message']['from'][$param];
         }
 
         return '';
