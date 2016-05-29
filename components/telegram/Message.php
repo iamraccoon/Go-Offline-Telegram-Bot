@@ -21,6 +21,6 @@ class Message
 
     public static function info()
     {
-        return 'info';
+        return 'Gо Offline не ставит перед собой никаких целей, кроме как встать из-за компьютера и пообщаться с живыми людьми.';
     }
 }
