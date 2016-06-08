@@ -51,7 +51,7 @@ class UserBehavior extends Behavior
     public function beforeAction()
     {
         if ($this->validate()) {
-            if (!($user = User::find()->select('id')->where('id=:id', [':id' => $this->userId])->one())) {
+            if (!($user = User::find()->select('*')->where('id=:id', [':id' => $this->userId])->one())) {
 
                 $user = new User();
                 $user->id = $this->userId;

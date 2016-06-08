@@ -22,7 +22,8 @@ class BotAction
         'start',
         'help',
         'chat',
-        'info'
+        'info',
+        'events'
     ];
 
     /**

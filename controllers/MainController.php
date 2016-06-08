@@ -8,6 +8,7 @@ use app\actions\StartAction;
 use app\actions\HelpAction;
 use app\actions\JoyAction;
 use app\actions\InfoAction;
+use app\actions\EventsAction;
 
 class MainController extends Controller
 {
@@ -33,7 +34,8 @@ class MainController extends Controller
             'start' => ['class' => StartAction::className()],
             'help' => ['class' => HelpAction::className()],
             'joy' => ['class' => JoyAction::className()],
-            'info' => ['class' => InfoAction::className()]
+            'info' => ['class' => InfoAction::className()],
+            'events' => ['class' => EventsAction::className()]
         ];
     }
 
@@ -41,7 +43,8 @@ class MainController extends Controller
     {
         $bot = Yii::$app->bot;
         $bot->init();
+
         $message = $bot->makeAnswer();
-        $bot->sendMessage($bot->getChatId(), $message);
+        $bot->sendMessage($bot->getChatId(), $message, 'HTML');
     }
 }
