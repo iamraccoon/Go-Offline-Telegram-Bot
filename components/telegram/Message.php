@@ -2,6 +2,10 @@
 
 namespace app\components\telegram;
 
+/**
+ * Class Message
+ * @package app\components\telegram
+ */
 class Message
 {
     public static function joy($query)
@@ -9,18 +13,16 @@ class Message
         return $query;
     }
 
+    /**
+     * @return string
+     */
     public static function start()
     {
-        return 'start';
+        return 'Gо Offline не ставит перед собой никаких целей, кроме как встать из-за компьютера и пообщаться с живыми людьми.';
     }
 
     public static function help()
     {
         return 'help';
-    }
-
-    public static function info()
-    {
-        return 'Gо Offline не ставит перед собой никаких целей, кроме как встать из-за компьютера и пообщаться с живыми людьми.';
     }
 }
