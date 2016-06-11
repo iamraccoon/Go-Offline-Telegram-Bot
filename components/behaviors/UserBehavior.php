@@ -3,7 +3,7 @@
 namespace app\components\behaviors;
 
 use app\models\User;
-use TelegramBot\Api\Exception;
+use Longman\TelegramBot\Exception\TelegramException;
 use yii;
 use yii\base\Behavior;
 use yii\base\Controller;
@@ -46,23 +46,23 @@ class UserBehavior extends Behavior
 
     /**
      * @return bool
-     * @throws \TelegramBot\Api\Exception
+     * @throws \Longman\TelegramBot\Exception\TelegramException
      */
     public function beforeAction()
     {
         if ($this->validate()) {
-            if (!($user = User::find()->select('*')->where('id=:id', [':id' => $this->userId])->one())) {
+            if (!($user = User::find()->select('id')->where('id=:id', [':id' => $this->userId])->one())) {
 
                 $user = new User();
                 $user->id = $this->userId;
                 $user->firstName = $this->firstName;
                 if (!$user->validate() or !$user->save(false)) {
-                    throw new Exception('User creation error');
+                    throw new TelegramException('User creation error');
                 }
             } else {
-                if (!$user->update()) {
-                    throw new Exception('User update error');
-                }
+//                if (!$user->update()) {
+//                    throw new TelegramException('User update error');
+//                }
             }
         }
 

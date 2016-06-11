@@ -2,22 +2,27 @@
 
 namespace app\components\telegram;
 
+use Longman\TelegramBot\Exception\TelegramException;
 use yii;
-use TelegramBot\Api\BotApi;
 use yii\base\Configurable;
 use yii\helpers\Json;
-use TelegramBot\Api\Exception;
+use Longman\TelegramBot\Telegram;
 
 /**
  * Class Bot
  * @package components\telegram
  */
-class Bot extends BotApi implements Configurable
+class Bot extends Telegram implements Configurable
 {
     /**
      * @var string
      */
-    public $botToken;
+    public $api_key;
+
+    /**
+     * @var string
+     */
+    public $bot_name;
 
     /**
      * @var string
@@ -59,21 +64,17 @@ class Bot extends BotApi implements Configurable
         $this->getMessage();
     }
 
-    /**
-     * @param $config
-     * @throws Exception
-     */
     public function __construct($config = [])
     {
         if (!empty($config)) {
             Yii::configure($this, $config);
         }
 
-        if (empty($this->botToken)) {
-            throw new Exception('Bot token is required');
+        if (empty($this->api_key)) {
+            throw new TelegramException('api_key is required');
         }
 
-        parent::__construct($this->botToken);
+        parent::__construct($this->api_key, $this->bot_name);
     }
 
     /**

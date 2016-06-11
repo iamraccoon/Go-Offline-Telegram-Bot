@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use Longman\TelegramBot\Request;
+use Longman\TelegramBot\Telegram;
 use yii;
 use yii\base\Controller;
 use app\actions\StartAction;
@@ -43,6 +45,6 @@ class MainController extends Controller
         $bot->init();
 
         $message = $bot->makeAnswer();
-        $bot->sendMessage($bot->getChatId(), $message, 'HTML');
+        Request::sendMessage(['chat_id' => $bot->getChatId(), 'text' => $message]);
     }
 }
