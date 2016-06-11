@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "638e5464d0029a2e29479f4887831dbf",
+    "hash": "af3a7b88e173acb3e99b5699ab884973",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -312,17 +312,193 @@
             "time": "2015-08-05 01:03:42"
         },
         {
+            "name": "longman/telegram-bot",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/akalongman/php-telegram-bot.git",
+                "reference": "b1661047c183280846012566f20c5060f3920f32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/akalongman/php-telegram-bot/zipball/b1661047c183280846012566f20c5060f3920f32",
+                "reference": "b1661047c183280846012566f20c5060f3920f32",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-pdo": "*",
+                "monolog/monolog": "^1.19",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8",
+                "squizlabs/php_codesniffer": "~2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Longman\\TelegramBot\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Avtandil Kikabidze aka LONGMAN",
+                    "email": "akalongman@gmail.com",
+                    "homepage": "http://longman.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP telegram bot",
+            "homepage": "https://github.com/akalongman/php-telegram-bot",
+            "keywords": [
+                "api",
+                "bot",
+                "telegram"
+            ],
+            "time": "2016-06-07 06:21:38"
+        },
+        {
+            "name": "monolog/monolog",
+            "version": "1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "39aeecefaeacb43b7315399f37aee63b34930ec1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/39aeecefaeacb43b7315399f37aee63b34930ec1",
+                "reference": "39aeecefaeacb43b7315399f37aee63b34930ec1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/log": "~1.0"
+            },
+            "provide": {
+                "psr/log-implementation": "1.0.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "^2.4.9",
+                "doctrine/couchdb": "~1.0@dev",
+                "graylog2/gelf-php": "~1.0",
+                "jakub-onderka/php-parallel-lint": "0.9",
+                "php-amqplib/php-amqplib": "~2.4",
+                "php-console/php-console": "^3.1.3",
+                "phpunit/phpunit": "~4.5",
+                "phpunit/phpunit-mock-objects": "2.3.0",
+                "ruflin/elastica": ">=0.90 <3.0",
+                "sentry/sentry": "^0.13",
+                "swiftmailer/swiftmailer": "~5.3"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+                "ext-mongo": "Allow sending log messages to a MongoDB server",
+                "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+                "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
+                "php-console/php-console": "Allow sending log messages to Google Chrome",
+                "rollbar/rollbar": "Allow sending log messages to Rollbar",
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
+                "sentry/sentry": "Allow sending log messages to a Sentry server"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Monolog\\": "src/Monolog"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "homepage": "http://github.com/Seldaek/monolog",
+            "keywords": [
+                "log",
+                "logging",
+                "psr-3"
+            ],
+            "time": "2016-05-26 21:44:25"
+        },
+        {
+            "name": "psr/log",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "d8e60a5619fff77f9669da8997697443ef1a1d7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d8e60a5619fff77f9669da8997697443ef1a1d7e",
+                "reference": "d8e60a5619fff77f9669da8997697443ef1a1d7e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2016-01-06 21:40:42"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "fffbc0e2a7e376dbb0a4b5f2ff6847330f20ccf9"
+                "reference": "1460e98b53d2f916f1b4123069c96c90844a1a4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/fffbc0e2a7e376dbb0a4b5f2ff6847330f20ccf9",
-                "reference": "fffbc0e2a7e376dbb0a4b5f2ff6847330f20ccf9",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/1460e98b53d2f916f1b4123069c96c90844a1a4d",
+                "reference": "1460e98b53d2f916f1b4123069c96c90844a1a4d",
                 "shasum": ""
             },
             "require": {
@@ -362,62 +538,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-01-03 15:42:47"
-        },
-        {
-            "name": "telegram-bot/api",
-            "version": "v1.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/TelegramBot/Api.git",
-                "reference": "a0bd3bea39a6f01a0e8a79d054d596b6ededbc3a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/TelegramBot/Api/zipball/a0bd3bea39a6f01a0e8a79d054d596b6ededbc3a",
-                "reference": "a0bd3bea39a6f01a0e8a79d054d596b6ededbc3a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "codeception/codeception": "*",
-                "phpunit/phpunit": "4.*",
-                "squizlabs/php_codesniffer": "2.*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "TelegramBot\\Api\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ilya Gusev",
-                    "email": "mail@igusev.ru",
-                    "homepage": "https://php-cat.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "PHP Wrapper for Telegram Bot API",
-            "homepage": "https://github.com/TelegramBot/Api",
-            "keywords": [
-                "bot",
-                "bot api",
-                "php",
-                "telegram"
-            ],
-            "time": "2015-08-17 11:55:00"
+            "time": "2016-05-11 12:36:48"
         },
         {
             "name": "yiisoft/yii2",
@@ -425,12 +546,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "aeb743730e509384bbc95b03d9657ee1a64f4169"
+                "reference": "50df54d2cd889e9425742a84325f3abfc6ab5ad0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/aeb743730e509384bbc95b03d9657ee1a64f4169",
-                "reference": "aeb743730e509384bbc95b03d9657ee1a64f4169",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/50df54d2cd889e9425742a84325f3abfc6ab5ad0",
+                "reference": "50df54d2cd889e9425742a84325f3abfc6ab5ad0",
                 "shasum": ""
             },
             "require": {
@@ -511,7 +632,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2016-04-08 07:36:38"
+            "time": "2016-06-10 13:43:15"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -519,12 +640,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "4dd9f52e2a376a875d998de6ab4c381291b0c69e"
+                "reference": "61ff14445779b225baa8e60cf4eddbc46cc14504"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/4dd9f52e2a376a875d998de6ab4c381291b0c69e",
-                "reference": "4dd9f52e2a376a875d998de6ab4c381291b0c69e",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/61ff14445779b225baa8e60cf4eddbc46cc14504",
+                "reference": "61ff14445779b225baa8e60cf4eddbc46cc14504",
                 "shasum": ""
             },
             "require": {
@@ -561,7 +682,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2016-03-30 22:44:25"
+            "time": "2016-04-18 20:34:24"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -569,12 +690,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-composer.git",
-                "reference": "348122de0b2c2e343b579f93fcda1da78cab4912"
+                "reference": "e882cc327a6935a41f2e8665b9ef0317f6852d4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/348122de0b2c2e343b579f93fcda1da78cab4912",
-                "reference": "348122de0b2c2e343b579f93fcda1da78cab4912",
+                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/e882cc327a6935a41f2e8665b9ef0317f6852d4d",
+                "reference": "e882cc327a6935a41f2e8665b9ef0317f6852d4d",
                 "shasum": ""
             },
             "require": {
@@ -608,7 +729,7 @@
                 "extension installer",
                 "yii2"
             ],
-            "time": "2016-03-21 19:11:44"
+            "time": "2016-06-05 20:34:32"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
@@ -616,12 +737,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-swiftmailer.git",
-                "reference": "20775fef1047cd927908270a8d7983580304eb57"
+                "reference": "163b9c6273e133c43a596aef46a9f5b1537731f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/20775fef1047cd927908270a8d7983580304eb57",
-                "reference": "20775fef1047cd927908270a8d7983580304eb57",
+                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/163b9c6273e133c43a596aef46a9f5b1537731f9",
+                "reference": "163b9c6273e133c43a596aef46a9f5b1537731f9",
                 "shasum": ""
             },
             "require": {
@@ -658,7 +779,7 @@
                 "swiftmailer",
                 "yii2"
             ],
-            "time": "2016-03-21 19:16:09"
+            "time": "2016-04-14 08:50:13"
         }
     ],
     "packages-dev": [
@@ -695,12 +816,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "684eab1624a66a4c37762c747c88a7f8664c65bf"
+                "reference": "c6533b0a70d2236cf1f7ce21bfaa3cd12e287019"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/684eab1624a66a4c37762c747c88a7f8664c65bf",
-                "reference": "684eab1624a66a4c37762c747c88a7f8664c65bf",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/c6533b0a70d2236cf1f7ce21bfaa3cd12e287019",
+                "reference": "c6533b0a70d2236cf1f7ce21bfaa3cd12e287019",
                 "shasum": ""
             },
             "require": {
@@ -737,7 +858,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2016-04-06 16:46:55"
+            "time": "2016-06-01 11:19:16"
         },
         {
             "name": "phpspec/php-diff",
@@ -783,12 +904,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-codeception.git",
-                "reference": "e01b3c46917b3f00c42f6a4aabf612cc36d792e6"
+                "reference": "572a6d46d942cc5733c45931fdbd1d60228f3c89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/e01b3c46917b3f00c42f6a4aabf612cc36d792e6",
-                "reference": "e01b3c46917b3f00c42f6a4aabf612cc36d792e6",
+                "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/572a6d46d942cc5733c45931fdbd1d60228f3c89",
+                "reference": "572a6d46d942cc5733c45931fdbd1d60228f3c89",
                 "shasum": ""
             },
             "require": {
@@ -820,7 +941,7 @@
                 "codeception",
                 "yii2"
             ],
-            "time": "2016-03-21 19:11:26"
+            "time": "2016-04-14 08:46:27"
         },
         {
             "name": "yiisoft/yii2-debug",
@@ -828,12 +949,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "081795536b31d29106b0d1de0cb3aefa3e05e995"
+                "reference": "07ad6f410eb60c57345e4c687e53b097c40b4a6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/081795536b31d29106b0d1de0cb3aefa3e05e995",
-                "reference": "081795536b31d29106b0d1de0cb3aefa3e05e995",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/07ad6f410eb60c57345e4c687e53b097c40b4a6c",
+                "reference": "07ad6f410eb60c57345e4c687e53b097c40b4a6c",
                 "shasum": ""
             },
             "require": {
@@ -867,7 +988,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2016-03-21 19:12:39"
+            "time": "2016-06-06 19:17:49"
         },
         {
             "name": "yiisoft/yii2-faker",
@@ -875,12 +996,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-faker.git",
-                "reference": "a8daa97749e7154d91676405a1c59ed81e1ca999"
+                "reference": "6e6eb430809e3f9c05e367303909a05a4912d4c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-faker/zipball/a8daa97749e7154d91676405a1c59ed81e1ca999",
-                "reference": "a8daa97749e7154d91676405a1c59ed81e1ca999",
+                "url": "https://api.github.com/repos/yiisoft/yii2-faker/zipball/6e6eb430809e3f9c05e367303909a05a4912d4c0",
+                "reference": "6e6eb430809e3f9c05e367303909a05a4912d4c0",
                 "shasum": ""
             },
             "require": {
@@ -914,7 +1035,7 @@
                 "faker",
                 "yii2"
             ],
-            "time": "2016-03-21 19:13:03"
+            "time": "2016-04-14 08:47:34"
         },
         {
             "name": "yiisoft/yii2-gii",
@@ -922,12 +1043,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "0d93a9dbd55f2d0921b8e153554379bb213a2c7f"
+                "reference": "ad215b7f8c679e11e70ff3dc29c7306f28cef576"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/0d93a9dbd55f2d0921b8e153554379bb213a2c7f",
-                "reference": "0d93a9dbd55f2d0921b8e153554379bb213a2c7f",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/ad215b7f8c679e11e70ff3dc29c7306f28cef576",
+                "reference": "ad215b7f8c679e11e70ff3dc29c7306f28cef576",
                 "shasum": ""
             },
             "require": {
@@ -967,14 +1088,12 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2016-04-05 09:53:13"
+            "time": "2016-05-12 20:54:42"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "telegram-bot/api": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
