@@ -38,14 +38,16 @@ class Log extends \yii\db\ActiveRecord
         ];
     }
 
+    /**
+     * @param $data
+     * @return bool
+     * @throws \Exception
+     */
     public function saveLog($data)
     {
         $log = new Log();
-        $log->setAttributes([
-            'userId' => $data['userId'],
-            'message' => $data['message'],
-            'createAt' => new Expression('NOW()')
-        ]);
+        $log->load($data, '');
+        $log->setAttribute('createAt', new Expression('NOW()'));
 
         if (!$log->validate() or !$log->save(false)) {
             throw new \Exception('Log creation error');
