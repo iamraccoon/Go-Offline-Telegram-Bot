@@ -2,6 +2,7 @@
 
 namespace app\components\behaviors;
 
+use app\components\telegram\Command;
 use app\models\Log;
 use Yii;
 use yii\base\Behavior;
@@ -58,7 +59,7 @@ class LogBehavior extends Behavior
     {
         if ($this->validate()) {
             $this->init();
-            $this->saveLog();
+            $this->save();
         }
 
         return true;
@@ -67,7 +68,7 @@ class LogBehavior extends Behavior
     /**
      * @throws Exception
      */
-    private function saveLog()
+    private function save()
     {
         $log = new Log();
         $log->setAttributes([
@@ -79,6 +80,8 @@ class LogBehavior extends Behavior
         if (!$log->validate() or !$log->save(false)) {
             throw new Exception('Log creation error');
         }
+
+        return true;
     }
 
     /**
@@ -86,8 +89,9 @@ class LogBehavior extends Behavior
      */
     public function init()
     {
-        $this->userId = Yii::$app->bot->getChatId();
-        $this->message = Yii::$app->bot->getMessage();
+        $command = new Command();
+        $this->userId = $command->getChatId();
+        $this->message = $command->getText();
         $this->createAt = new Expression('NOW()');
     }
 

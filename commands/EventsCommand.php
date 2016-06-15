@@ -34,11 +34,11 @@ class EventsCommand extends Command
     {
         $data = Event::find()->select('*')->where(['>', 'date', $this->dateEvents])->orderBy('date')->asArray()->all();
 
-        $message = [];
+        $messages = [];
         foreach ($data as $cur) {
             $date = '<em>' . DateHelper::format($cur['date']) . '</em>';
             $name = '<b>' . $cur['name'] . '</b>';
-            $message[] = $date . "\n" . $name;
+            $messages[] = $date . "\n" . $name;
 
             $this->inlineKeyboard[] = new InlineKeyboardButton([
                 'text' => StringHelper::getLimitWorlds($cur['name'], 2),
@@ -47,8 +47,8 @@ class EventsCommand extends Command
             ]);
         }
 
-        if (count($message)) {
-            $this->text = implode("\n\n", $message);
+        if (count($messages)) {
+            $this->text = implode("\n\n", $messages);
         } else {
             $this->text = $this->getEmptyMessage();
         }

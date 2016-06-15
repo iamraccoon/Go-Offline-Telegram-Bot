@@ -2,6 +2,7 @@
 
 namespace app\components\telegram;
 
+use app\models\Log;
 use \Longman\TelegramBot\Commands\Command as BotCommand;
 
 /**
@@ -16,6 +17,11 @@ class Command extends BotCommand
     protected $chatId;
 
     /**
+     * @var string
+     */
+    protected $chatMessage;
+
+    /**
      * @var array
      */
     protected $data;
@@ -27,15 +33,37 @@ class Command extends BotCommand
     {
         $message = $this->getMessage();
         $this->chatId = (int)$message->getChat()->getId();
+        $this->chatMessage = $message->getText();
 
         $this->data['chat_id'] = $this->chatId;
+
+        //!!!
+        //   it's so stupid, but I can't use behaviors with this component
+        //!!!
+        $this->saveUser();
+        $this->saveLog();
 
         return parent::preExecute();
     }
 
-    public function getCommand()
+    /**
+     * @return bool
+     * @throws \Exception
+     */
+    private function saveLog()
     {
-        
+        $log = new Log();
+        $log->saveLog([
+            'userId' => $this->chatId,
+            'message' => $this->chatMessage
+        ]);
+
+        return true;
+    }
+
+    private function saveUser()
+    {
+        return true;
     }
 
     /**

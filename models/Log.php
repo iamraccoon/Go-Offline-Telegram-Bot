@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\Expression;
 
 /**
  * This is the model class for table "log".
@@ -31,10 +32,26 @@ class Log extends \yii\db\ActiveRecord
     {
         return [
             [['userId'], 'integer'],
-            [['message'], 'string'],
+            [['message'], 'default'],
             [['createAt'], 'safe'],
             [['userId'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['userId' => 'id']],
         ];
+    }
+
+    public function saveLog($data)
+    {
+        $log = new Log();
+        $log->setAttributes([
+            'userId' => $data['userId'],
+            'message' => $data['message'],
+            'createAt' => new Expression('NOW()')
+        ]);
+
+        if (!$log->validate() or !$log->save(false)) {
+            throw new \Exception('Log creation error');
+        }
+
+        return true;
     }
 
     /**
