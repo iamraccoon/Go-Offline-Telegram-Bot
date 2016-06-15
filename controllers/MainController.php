@@ -5,24 +5,12 @@ namespace app\controllers;
 use yii;
 use yii\base\Controller;
 
+/**
+ * Class MainController
+ * @package app\controllers
+ */
 class MainController extends Controller
 {
-//    public function behaviors()
-//    {
-//        return [
-//            'user' => [
-//                'class' => 'app\components\behaviors\UserBehavior',
-//                'actions' => array_keys($this->actions()),
-//                'currentAction' => Yii::$app->controller->action->id
-//            ],
-//            'log' => [
-//                'class' => 'app\components\behaviors\LogBehavior',
-//                'actions' => array_keys($this->actions()),
-//                'currentAction' => Yii::$app->controller->action->id
-//            ]
-//        ];
-//    }
-
     /**
      * Proxy action
      */
