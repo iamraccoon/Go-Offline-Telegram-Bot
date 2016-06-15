@@ -9,10 +9,8 @@ $config = [
     'components' => [
         'bot' => [
             'class' => 'app\components\telegram\Bot',
-            'api_key' => '186801726:AAEY4abZlY14wsToP9LD0oe8q-6_Z5Nfsow',
-            'bot_name' => 'Go-Offline-Bot',
-            'controllerName' => 'main',
-            'methodDefault' => 'start',
+            'botToken' => '186801726:AAEY4abZlY14wsToP9LD0oe8q-6_Z5Nfsow',
+            'botName' => 'Go-Offline-Bot'
         ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
