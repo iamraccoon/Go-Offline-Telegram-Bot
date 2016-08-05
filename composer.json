@@ -18,7 +18,7 @@
         "yiisoft/yii2": ">=2.0.5",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "longman/telegram-bot": "*",
+        "longman/telegram-bot": "dev-master",
         "nesbot/carbon": "~1.21"
     },
     "require-dev": {
