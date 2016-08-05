@@ -6,6 +6,7 @@ use app\components\helpers\DateHelper;
 use app\components\helpers\StringHelper;
 use app\components\telegram\Command;
 use app\models\Event;
+use Carbon\Carbon;
 use Longman\TelegramBot\Entities\InlineKeyboardButton;
 use Longman\TelegramBot\Request;
 
@@ -15,6 +16,11 @@ use Longman\TelegramBot\Request;
  */
 class EventsCommand extends Command
 {
+    /**
+     * @const int
+     */
+    const HOURS_AFTER_BEGINNING_EVENT = 2;
+
     /**
      * @var string
      */
@@ -85,9 +91,6 @@ class EventsCommand extends Command
      */
     private function getDate()
     {
-        $date = new \DateTime();
-        $date->modify('-2 hour');
-
-        return $date->format('Y-m-d H:i:s');
+        return Carbon::now()->subHours(self::HOURS_AFTER_BEGINNING_EVENT);
     }
 }
