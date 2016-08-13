@@ -19,7 +19,8 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "longman/telegram-bot": "dev-master",
-        "nesbot/carbon": "~1.21"
+        "nesbot/carbon": "~1.21",
+        "coduo/php-humanizer": "2.0.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

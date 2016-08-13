@@ -3,10 +3,10 @@
 namespace Longman\TelegramBot\Commands\UserCommands;
 
 use app\components\helpers\DateHelper;
-use app\components\helpers\StringHelper;
 use app\components\telegram\Command;
 use app\models\Event;
 use Carbon\Carbon;
+use Coduo\PHPHumanizer\StringHumanizer;
 use Longman\TelegramBot\Entities\InlineKeyboardButton;
 use Longman\TelegramBot\Request;
 
@@ -21,6 +21,10 @@ class EventsCommand extends Command
      */
     const HOURS_AFTER_BEGINNING_EVENT = 2;
 
+    /**
+     * @const int
+     */
+    const TRUNCATE_CHARACTER_COUNT = 2;
     /**
      * @var string
      */
@@ -47,9 +51,8 @@ class EventsCommand extends Command
             $messages[] = $date . "\n" . $name;
 
             $this->inlineKeyboard[] = new InlineKeyboardButton([
-                'text' => StringHelper::getLimitWorlds($cur['name'], 2),
+                'text' => StringHumanizer::truncate($cur['name'], self::TRUNCATE_CHARACTER_COUNT),
                 'callback_data' => '/events'
-                //'callback_data' => $cur['id']
             ]);
         }
 

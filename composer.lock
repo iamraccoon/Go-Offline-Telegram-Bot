@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "deda5fac070d95ca265fc6ee8fd7212a",
-    "content-hash": "44a5c0ecff06bd4c14451bfe5ac78077",
+    "hash": "bcea8bfdbcb82122031c6bce94c6f559",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -254,6 +253,68 @@
                 "markdown-extra"
             ],
             "time": "2016-06-20 21:09:53"
+        },
+        {
+            "name": "coduo/php-humanizer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/coduo/php-humanizer.git",
+                "reference": "ae4d19711fa8063a4aab3920753a01ff56589bd9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/coduo/php-humanizer/zipball/ae4d19711fa8063a4aab3920753a01ff56589bd9",
+                "reference": "ae4d19711fa8063a4aab3920753a01ff56589bd9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "symfony/config": "^2.3|^3.0",
+                "symfony/translation": "^2.3|^3.0",
+                "symfony/yaml": "^2.3|^3.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "^2",
+                "phpunit/phpunit": "^4.5|^5.0",
+                "thunderer/shortcode": "~0.5"
+            },
+            "suggest": {
+                "ext-intl": "Required if you are going to use humanizer with locales different than en_EN"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "": "src",
+                    "Coduo\\PHPHumanizer\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Norbert Orzechowicz",
+                    "email": "norbert@orzechowicz.pl"
+                },
+                {
+                    "name": "Michał Dąbrowski",
+                    "email": "dabrowski@brillante.pl"
+                }
+            ],
+            "description": "Humanize values that are readable only for developers",
+            "keywords": [
+                "humanize",
+                "humanizer",
+                "php"
+            ],
+            "time": "2016-08-09 19:13:50"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -617,7 +678,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/36c134b53c21a137d450c86a27046022d98574fd",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/7a026991092624a245d300685ce09ff5b4d110e0",
                 "reference": "36c134b53c21a137d450c86a27046022d98574fd",
                 "shasum": ""
             },
@@ -669,7 +730,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message/zipball/14b9b813c5e36af4498ef38ef97938bf7090fd52",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
                 "reference": "14b9b813c5e36af4498ef38ef97938bf7090fd52",
                 "shasum": ""
             },
@@ -810,6 +871,108 @@
             "time": "2016-07-09 18:06:48"
         },
         {
+            "name": "symfony/config",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/config.git",
+                "reference": "b55e0313d3aee015d9e7273191c86d7708e8ae4c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/config/zipball/b55e0313d3aee015d9e7273191c86d7708e8ae4c",
+                "reference": "b55e0313d3aee015d9e7273191c86d7708e8ae4c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9",
+                "symfony/filesystem": "~2.8|~3.0"
+            },
+            "suggest": {
+                "symfony/yaml": "To use the yaml reference dumper"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Config\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Config Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-08-10 07:06:11"
+        },
+        {
+            "name": "symfony/filesystem",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "a803b0e3dedec72dcea22da6836f598dc9263194"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/a803b0e3dedec72dcea22da6836f598dc9263194",
+                "reference": "a803b0e3dedec72dcea22da6836f598dc9263194",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-07-29 15:37:06"
+        },
+        {
             "name": "symfony/polyfill-mbstring",
             "version": "dev-master",
             "source": {
@@ -933,6 +1096,61 @@
             "time": "2016-07-30 07:26:43"
         },
         {
+            "name": "symfony/yaml",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "80944546b4014ce240dbeafabc2a3aec9e4794e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/80944546b4014ce240dbeafabc2a3aec9e4794e1",
+                "reference": "80944546b4014ce240dbeafabc2a3aec9e4794e1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "symfony/console": "~2.8|~3.0"
+            },
+            "suggest": {
+                "symfony/console": "For validating YAML files using the lint command"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-08-09 13:44:53"
+        },
+        {
             "name": "yiisoft/yii2",
             "version": "dev-master",
             "source": {
@@ -942,7 +1160,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/4e946194de17698fd018c9ddc27d5752fe11276c",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/15d0866f5802020c2c048b66bbff61ce693de601",
                 "reference": "4e946194de17698fd018c9ddc27d5752fe11276c",
                 "shasum": ""
             },
@@ -1212,7 +1430,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/5265f16ae0ae9b6acaf7c518063d80b2383a8086",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/a1dd85c38f033c895f120e4b346cd737098e7c4a",
                 "reference": "5265f16ae0ae9b6acaf7c518063d80b2383a8086",
                 "shasum": ""
             },
@@ -1439,7 +1657,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/752f6cfc17572f32f599639770289a6e52cf3dc2",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/529e35ba79b6e25beb192da161ab0bf4f809cf2b",
                 "reference": "752f6cfc17572f32f599639770289a6e52cf3dc2",
                 "shasum": ""
             },
@@ -1486,7 +1704,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "longman/telegram-bot": 20
+        "longman/telegram-bot": 20,
+        "coduo/php-humanizer": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
